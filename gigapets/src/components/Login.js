@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
 import { Form, Button, Message } from "semantic-ui-react";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 export const Container = styled.div`
@@ -48,6 +49,20 @@ const LoginForm = props => {
     }
 
     const size = ['large'];
+
+    // const axiosLogin = e => {
+    //     axiosWithAuth()
+    //     .post('/login', e.credentials)
+    //     .then(res => {
+    //       localStorage.setItem('token', res.data.payload)
+    //       setEntry({
+    //         ...entry,
+    //         isLoading: false
+    //       });
+    //       props.history.push('/profile')
+    //     })
+    //     .catch(err => console.log("Login Error", err.response))
+    //   }
    
     
     
@@ -89,4 +104,4 @@ const LoginForm = props => {
 
 
 
-export default LoginForm;
+export default withRouter (LoginForm);
