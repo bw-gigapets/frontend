@@ -1,11 +1,17 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 // import { addFoodItem } from './reducer';
-
+import LoginForm from "./components/Login";
+import RegisterForm from './components/Register';
+import { Route } from 'react-router-dom';
 function App() {
-  return (
-    <div className="App">
-    <h1>Gigapets!</h1>
+
+
+  return(
+    <div>
+      <Route exact path="/" component={LoginForm} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/register" component={RegisterForm} />
     </div>
   );
 }
