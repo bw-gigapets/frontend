@@ -1,6 +1,8 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 // import { addFoodItem } from './reducer';
+// import foods from './reducer/action';
+// import users from './reducer/users
 import WelcomePage from "./components/WelcomePage";
 import LoginForm from "./components/Login";
 import RegisterForm from './components/Register';
@@ -28,6 +30,11 @@ function App() {
 //     foodCategory: state.foodCategory,
 //     Date: state.Date,
 //   }
+// }
+
+// add mapDispatchToProps = {
+//   foods,
+//   users
 // }
 
 // export default connect(mapStateToProps, { addFoodItem })(App)

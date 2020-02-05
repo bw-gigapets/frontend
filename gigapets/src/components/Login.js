@@ -50,19 +50,19 @@ const LoginForm = props => {
 
     const size = ['large'];
 
-    // const axiosLogin = e => {
-    //     axiosWithAuth()
-    //     .post('/login', e.credentials)
-    //     .then(res => {
-    //       localStorage.setItem('token', res.data.payload)
-    //       setEntry({
-    //         ...entry,
-    //         isLoading: false
-    //       });
-    //       props.history.push('/profile')
-    //     })
-    //     .catch(err => console.log("Login Error", err.response))
-    //   }
+    const axiosLogin = e => {
+        axiosWithAuth()
+        .post('/auth/login', e.credentials)
+        .then(res => {
+          localStorage.setItem('token', res.data.payload)
+          setEntry({
+            ...entry,
+            isLoading: false
+          });
+          props.history.push('/profile')
+        })
+        .catch(err => console.log("Login Error", err.response))
+      }
    
     
     
@@ -77,11 +77,14 @@ const LoginForm = props => {
                 <label htmlFor="username">Username: </label>
                 <input onChange={changeHandler} id="username" type="text" defaultValue={userLogin.username} placeholder="Username"></input>
             </Form.Field>
-           <Form.Field>
+            <Form.Field>
                 <label htmlFor="password">Password: </label>
                 <input onChange={changeHandler} id="email" type="password" defaultValue={userLogin.password} placeholder="Password"></input>
             </Form.Field>
+
                 <Button type="submit"> <Link to="/profile">Login</Link></Button>
+       
+
             </Form>
 
             {/* { userLogin && 
