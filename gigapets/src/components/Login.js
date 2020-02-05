@@ -81,7 +81,7 @@ const LoginForm = props => {
                 <label htmlFor="password">Password: </label>
                 <input onChange={changeHandler} id="email" type="password" defaultValue={userLogin.password} placeholder="Password"></input>
             </Form.Field>
-                <Button type="submit"> Login</Button>
+                <Button type="submit"> <Link to="/profile">Login</Link></Button>
             </Form>
 
             {/* { userLogin && 

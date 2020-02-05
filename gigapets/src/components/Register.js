@@ -9,7 +9,7 @@ import { Formik } from 'formik';
 const RegisterForm = () => (
 
 <Formik
-initialValues={{ email: "", password: "" }}
+initialValues={{ first_name: "", last_name:"", password: "" }}
 onSubmit={(values, { setSubmitting }) => {
   setTimeout(() => {
     console.log("Logging in", values);
@@ -19,8 +19,9 @@ onSubmit={(values, { setSubmitting }) => {
 
 
 validationSchema={Yup.object().shape({
-  email: Yup.string()
-    .email()
+  firstName: Yup.string()
+    .required("Required"),
+    lastName: Yup.string()
     .required("Required"),
   password: Yup.string()
     .required("No password provided.")
@@ -46,36 +47,53 @@ validationSchema={Yup.object().shape({
           <h1>Gigapets Registration</h1>
     <Form onSubmit={handleSubmit}>
         <Form.Field>
-      <label htmlFor="email">Email: </label>
+      <label htmlFor="first_name">First Name: </label>
       <input
-        name="email"
+        name="first_name"
         type="text"
-        placeholder="Enter your email"
-        value={values.email}
+        placeholder="Enter your first name"
+        value={values.first_name}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.email && touched.email && "error"}
+        className={errors.first_name && touched.first_name && "error"}
       />
      
-      {errors.email && touched.email && (
-        <div className="input-feedback">{errors.email}</div>
+      {errors.first_name && touched.first_name && (
+        <div className="input-feedback">{errors.first_name}</div>
+      )}
+      </Form.Field>
+
+      <Form.Field>
+      <label htmlFor="first_name">Last Name: </label>
+      <input
+        name="last_name"
+        type="text"
+        placeholder="Enter your last name"
+        value={values.last_name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={errors.last_name && touched.last_name && "error"}
+      />
+     
+      {errors.last_name && touched.last_name && (
+        <div className="input-feedback">{errors.last_name}</div>
       )}
       </Form.Field>
 
       <Form.Field>
       <label htmlFor="username">Choose A Username: </label>
       <input
-        name="email"
+        name="username"
         type="text"
         placeholder="Enter your username"
-        value={values.email}
+        value={values.username}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.email && touched.email && "error"}
+        className={errors.username && touched.username && "error"}
       />
      
-      {errors.email && touched.email && (
-        <div className="input-feedback">{errors.email}</div>
+      {errors.username && touched.username && (
+        <div className="input-feedback">{errors.username}</div>
       )}
       </Form.Field>
       <Form.Field>
