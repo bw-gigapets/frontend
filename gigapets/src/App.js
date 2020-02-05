@@ -6,6 +6,8 @@ import React from 'react';
 import WelcomePage from "./components/WelcomePage";
 import LoginForm from "./components/Login";
 import RegisterForm from './components/Register';
+import Profile from './components/Profile';
+import ManageAccount from './components/ManageAccount';
 import { Route } from 'react-router-dom';
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
       <Route exact path="/" component={WelcomePage} />
       <Route path="/login" component={LoginForm} />
       <Route path="/register" component={RegisterForm} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/manage-account" component={ManageAccount}/>
     </div>
   );
 }
