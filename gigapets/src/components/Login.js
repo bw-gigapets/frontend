@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { Form, Button, Message } from "semantic-ui-react";
 import { Link, withRouter } from 'react-router-dom';
-// import { axiosWithAuth } from '../utils/axiosWithAuth';
-
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { userLogin } from '../actions/user_actions';
 
 export const Container = styled.div`
  margin-top: 5rem;
@@ -34,44 +35,31 @@ export const Underlined = styled.span`
 `	
 
 const LoginForm = props => {
-    const [userLogin, setUser] = useState ({
+    const [userCredentials, setUser] = useState ({
         username: "",  password: "",
     })
 
+    console.log(props.user)
     const changeHandler = event => {
-        setUser({...userLogin, [event.target.name] : event.target.value})
+        setUser({...userCredentials, [event.target.name] : event.target.value})
         console.log()
-    }
-
-    const submitForm = event => {
-        event.preventDefault()
-
     }
 
     const size = ['large'];
 
     const axiosLogin = e => {
-        axiosWithAuth()
-        .post('/auth/login', e.credentials)
-        .then(res => {
-          localStorage.setItem('token', res.data.payload)
-          setEntry({
-            ...entry,
-            isLoading: false
-          });
-          props.history.push('/profile')
-        })
-        .catch(err => console.log("Login Error", err.response))
+        e.preventDefault()
+        props.userLogin(userCredentials)
+        props.history.push('/profile')
       }
    
-    
     
     return(
        
             <Container>
                 <Content>
                 <h1>Gigapets Login</h1>
-            <Form size={size} key={size} onSubmit={submitForm}  >
+            <Form size={size} key={size} onSubmit={axiosLogin}  >
            
             <Form.Field> 
                 <label htmlFor="username">Username: </label>
@@ -105,6 +93,12 @@ const LoginForm = props => {
     )
 }
 
+const mapStateToProps = (state) => {
 
+  }
 
-export default withRouter (LoginForm);
+const mapDispatchToProps = {
+  userLogin 
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(LoginForm);
