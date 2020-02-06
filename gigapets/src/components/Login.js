@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Form, Button, Message } from "semantic-ui-react";
-import { Link, withRouter } from 'react-router-dom';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Link  } from 'react-router-dom';
 import { userLogin } from '../actions/user_actions';
 
 export const Container = styled.div`

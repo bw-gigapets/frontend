@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Form, Button } from 'semantic-ui-react';
 import { Container, Content, Underlined, P } from './Login';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import { from } from 'rxjs';
 
 
 const RegisterForm = () => (
@@ -126,8 +128,16 @@ validationSchema={Yup.object().shape({
 </Formik>
 );
 
+const mapStateToProps = (state) => {
 
-export default RegisterForm;
+}
+
+const mapDispatchToProps = {
+
+}
+
+
+export default connect (mapStateToProps, mapDispatchToProps)(RegisterForm);
 
 
 
