@@ -129,11 +129,11 @@ validationSchema={Yup.object().shape({
 );
 
 const mapStateToProps = (state) => {
-
+  
 }
 
 const mapDispatchToProps = {
-
+  userRegister
 }
 
 

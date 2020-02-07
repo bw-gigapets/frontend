@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Button, Form } from 'semantic-ui-react'
 import styled from 'styled-components'
@@ -45,8 +45,9 @@ const AddChild = (props) => {
         weight: ''
     }
 
-    const handleSubmitCb = newChild => {
-        setNewChild(initialStateNewChild)
+    props.add_child(nChild)
+    const handleSubmit = newChild => {
+        setNewChild(newChild)
         props.triggerChildDataUpdate(prevState => !prevState)
     }
     
@@ -57,7 +58,7 @@ const AddChild = (props) => {
         <div >
             <AddChildWrap>
                 <Title>Add Child</Title>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={add_child}>
                         <Form.Field>
                             <label>Name</label>
                             <input 
@@ -99,7 +100,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
- 
+    add_child
 }
 
 export default connect (mapStateToProps, mapDispatchToProps)(AddChild);
