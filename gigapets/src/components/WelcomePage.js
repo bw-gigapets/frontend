@@ -29,7 +29,7 @@ font-size: 1.2em;
 
 
 const Imge= styled.img`
-    margin-left:10%;
+    margin-left:20%;
 
 `
 
@@ -46,8 +46,8 @@ export default function WelcomePage() {
     return (
       <section className="welcome-page">
         <Nav>
-        <Link to="/about">
-            <A>About</A>
+        <Link to="/gigapen">
+            <A>GigaPen</A>
         </Link>
         <Link to="/login">
             <Buttn>Login/Sign-up</Buttn>

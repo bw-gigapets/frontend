@@ -34,6 +34,32 @@ export const Underlined = styled.span`
 	text-decoration: underline
 `	
 
+const Nav = styled.nav`
+
+box-shadow: 2px 2px 2px #888888;
+background-color: #ADFFB5;
+display: flex;
+flex-direction: row;
+flex-wrap; nowrap;
+justify-content: flex-end;
+align-items: baseline;
+margin-bottom: 5%;
+`
+
+const A = styled.a`
+color: palevioletred;
+font-size: 1.2em;
+
+`
+const Buttn = styled.button`
+    color: palevioletred;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+`
+
 const LoginForm = props => {
     const [userCredentials, setUser] = useState ({
         username: "",  password: "",
@@ -55,7 +81,16 @@ const LoginForm = props => {
    
     
     return(
-       
+        <div>
+            <Nav>
+        <Link to="/">
+            <A>Home</A>
+        </Link>
+        <Link to="/profile">
+            <Buttn>Profile</Buttn>
+        </Link>
+        </Nav>
+
             <Container>
                 <Content>
                 <h1>Gigapets Login</h1>
@@ -89,7 +124,7 @@ const LoginForm = props => {
 			</P>
             </Content>
         </Container>
-       
+       </div>
     )
 }
 

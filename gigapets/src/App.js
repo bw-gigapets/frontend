@@ -8,6 +8,7 @@ import LoginForm from "./components/Login";
 import RegisterForm from './components/Register';
 import Profile from './components/Profile';
 import ManageAccount from './components/ManageAccount';
+import GigaPen from './components/GigaPen'
 import { Route } from 'react-router-dom';
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return(
     <div>
       <Route exact path="/" component={WelcomePage} />
+      <Route path="/gigapen" component={GigaPen} />
       <Route path="/login" component={LoginForm} />
       <Route path="/register" component={RegisterForm} />
       <Route path="/profile" component={Profile} />
