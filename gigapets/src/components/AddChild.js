@@ -30,7 +30,7 @@ const Title = styled.h2`
   background: lightPurple;
   align-self: stretch;
   color: white;
-  margin: 0;
+  margin: auto;
   padding: 10px;
 `
 
@@ -47,7 +47,7 @@ const AddChild = (props) => {
 
     const handleSubmitCb = newChild => {
         setNewChild(initialStateNewChild)
-        props.triggerChildDataUpdate(prevState => !prevState)
+        
     }
     
     const [newChild, setNewChild, handleChanges, handleSubmit] = useForm(initialStateNewChild, handleSubmitCb)
