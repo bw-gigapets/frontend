@@ -10,12 +10,12 @@ export const EDIT_CHILD_START = "EDIT_CHILD_START"
 export const EDIT_CHILD_SUCCESS = "EDIT_CHILD_SUCCESS"
 export const EDIT_CHILD_FAILURE = "EDIT_CHILD_FAILURE"
 
-export function addChild () {
+export function add_child (newChild) {
     return dispatch => { 
         
         dispatch({type: ADD_CHILD_START})
 
-        axiosWithAuth().get(`/auth/users/1/children`)
+        axiosWithAuth().post(`/auth/users/1/children`, newChild)
             .then(res => {
                 console.log(res)
                 dispatch({type: ADD_CHILD_SUCCESS, payload: res}) 
