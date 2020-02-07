@@ -15,7 +15,7 @@ export function addChild () {
         
         dispatch({type: ADD_CHILD_START})
 
-        axiosWithAuth().get(`/foods`)
+        axiosWithAuth().get(`/auth/users/1/children`)
             .then(res => {
                 console.log(res)
                 dispatch({type: ADD_CHILD_SUCCESS, payload: res}) 

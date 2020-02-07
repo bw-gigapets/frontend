@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import { Button, Form } from 'semantic-ui-react'
 import styled from 'styled-components'
 import useForm from '../components/useForm'
@@ -36,7 +37,7 @@ const Title = styled.h2`
 
 
 
-export default function AddChild(props) {
+const AddChild = (props) => {
 
     const initialStateNewChild = {
         name: '',
@@ -92,3 +93,13 @@ export default function AddChild(props) {
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+
+}
+
+const mapDispatchToProps = {
+ 
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(AddChild);
