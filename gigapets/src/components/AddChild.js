@@ -30,7 +30,7 @@ const Title = styled.h2`
   background: lightPurple;
   align-self: stretch;
   color: white;
-  margin: 0;
+  margin: auto;
   padding: 10px;
 `
 
@@ -45,11 +45,10 @@ const AddChild = (props) => {
         weight: ''
     }
 
-    props.add_child(nChild)
-    const handleSubmit = newChild => {
-        setNewChild(newChild)
-        props.triggerChildDataUpdate(prevState => !prevState)
-    }
+
+    const handleSubmitCb = newChild => {
+        setNewChild(initialStateNewChild)
+
     
     const [newChild, setNewChild, handleChanges, handleSubmit] = useForm(initialStateNewChild, handleSubmitCb)
 

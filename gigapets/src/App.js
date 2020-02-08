@@ -8,6 +8,7 @@ import LoginForm from "./components/Login";
 import RegisterForm from './components/Register';
 import Profile from './components/Profile';
 import ManageAccount from './components/ManageAccount';
+import AddFood from './components/NewFoodEntry';
 import { Route } from 'react-router-dom';
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/register" component={RegisterForm} />
       <Route path="/profile" component={Profile} />
       <Route path="/manage-account" component={ManageAccount}/>
+      <Route path="/add-food" component={AddFood}/>
     </div>
   );
 }

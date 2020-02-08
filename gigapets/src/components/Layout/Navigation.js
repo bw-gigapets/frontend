@@ -1,8 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 import { NavLink } from "react-router-dom";
-import { Link } from 'react-router-dom'
-// import Logo from '../../Assets/gigapets-logo.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,21 +10,27 @@ const HeaderContent = styled.div`
 position: relative;
 margin-top: -10px;
 margin-bottom: 20px;
-padding: 20px;
+padding: 1.5rem;
 background-color: #faeee7;
-`;
+box-shadow: 0px 0px 9px rgba(184, 209, 200);
+`
 
 const MainNav = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
   justify-content: center;
-  padding: 0 120px;
-  margin: 10px auto 0;
-`;
+  width: 50%;
+  margin: auto;
+  padding: 2.5rem;
+`
 
 
 const Logo = styled.img`
+    top: -1rem;
+    position: absolute;
+    width: 8%;
+    padding-top: 2rem;
+    margin-left 10%;
 `
 const activeClassName = "active";
 const NavLinks = styled(NavLink).attrs({
@@ -65,9 +70,10 @@ const NavLinks = styled(NavLink).attrs({
 
   &.${activeClassName} {
     background: white;
-    box-shadow: 0px 0px 10px rgba(255, 198, 199);
+    box-shadow: 0px 0px 10px rgba(230, 145, 145);
   }
-`;
+`
+
 
 
 
@@ -77,10 +83,10 @@ const NavHeader = () => {
   
   return (
     <HeaderContent>
-      <Link to='/profile'><Logo src={`gigapets-logo.png`}/></Link>
+      <Link to='/profile'><Logo src={`/gigapets-logo.png`}/></Link>
       <MainNav>
-
-        <NavLinks to="/new-food-entry">ADD Food</NavLinks>
+        <NavLinks to="/profile">Profile</NavLinks>
+        <NavLinks to="/add-food">Add Food</NavLinks>
         <NavLinks to="/manage-account">Manage Account</NavLinks>
         <NavLinks to="/login">Sign Out</NavLinks>
          
